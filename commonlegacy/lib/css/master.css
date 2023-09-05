@@ -1,0 +1,127 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark-gry-txt: #202020;
+    --grn-bkgrd: #7ba191;
+    --dark-brwn: #80461B;
+    --aged-white: #FCF5E5; 
+    --yuji: 'Yuji Syuku', serif;
+    --raleway: 'Raleway', sans-serif;
+}
+
+body {
+    font-family: var(--yuji) !important;
+    overflow: hidden;
+    /*font-family: 'Raleway', sans-serif; <---sans-serif option*/
+}
+
+#body-section {
+    background-color: var(--grn-bkgrd);
+}
+
+.nav-main a, .nav-main a:hover {
+    text-decoration: none;
+    color: var(--dark-gry-txt)
+}
+
+.block-txt {
+    font-family: var(--raleway);
+}
+
+.txt-inv {
+    color: ivory !important;
+}
+
+.dark-brown {
+    color: var(--dark-brwn);
+}
+
+.flip-card-front,
+.flip-card-back {
+    background-color: var(--aged-white) !important;
+}
+
+.card-ctr {
+    position: relative;
+}
+
+.flip-card-front img {
+    opacity: 70%;
+    width: 80%;
+    margin: 10px auto;
+}
+
+    .flip-card-back img {
+        opacity: 85%;
+        object-fit: fill !important;
+        height: 100%;
+        width: 100%;
+    }
+
+.debounce-css {
+    animation: none;
+}
+
+/*    .card-container:hover > .card-ctr {
+        animation: y-shift 0.5s ease, y-rotate 0.8s forwards ease;
+    } using jquery instead*/
+.can-animate {
+    animation: y-shift 0.5s ease, y-rotate 1.2s forwards ease;
+}
+
+.hold-pos {
+    transform: translateY(-2em);
+}
+
+/*.card-container:not(:hover) > .card-ctr {
+    transform: rotateY(0) translateY(0);
+}*/
+
+.card-container {
+    /*position: relative;*/
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    position: absolute !important;
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 10;
+}
+
+/*.back {
+
+}*/
+
+.color-test {
+    outline: 2px solid red;
+}
+
+@keyframes y-shift {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(0.5em);
+    }
+    100% {
+        transform: translateY(-2em);
+    }
+}
+
+@keyframes y-rotate {
+    0% {
+        transform: translateY(-2em) rotateY(0deg);
+    }
+
+    100% {
+        transform: translateY(-2em) rotateY(360deg);
+    }
+}
