@@ -40,10 +40,6 @@ body {
     color: var(--dark-brwn);
 }
 
-/*.card-ctr {
-    position: relative;
-}*/
-
 .debounce-css {
     animation: none;
 }
@@ -58,20 +54,6 @@ body {
 .hold-pos {
     transform: translateY(-2em);
 }
-
-/*.card-container:not(:hover) > .card-ctr {
-    transform: rotateY(0) translateY(0);
-}*/
-
-/*.card-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;*/
-    /*min-height: 24rem;*/
-/*    perspective: 1000px;
-    animation: y-shift 0.8ss ease-in-out forwards, 
-        y-rotate 1.5s linear forwards;
-}*/
 
 .card-container {
     -webkit-perspective: 800px;
@@ -102,31 +84,6 @@ body {
         transform: none;
     }
 
-/*.card-ctr {
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-}*/
-
-/*.card-container:hover .card-ctr {
-    transform: rotateY(180deg);
-    animation: y-rotate 1.5s linear;
-}*/
-
-/*.card, .card img {
-    height: 200px;
-}*/
-
-/*.card {
-    -webkit-transition: -webkit-transform 1.5s;
-    -moz-transition: -moz-transform 1.5s;
-    -o-transition: -o-transform 1.5s;
-    transition: transform 1.5s;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    position: relative;
-}*/
-
-/* flip speed goes here */
 .card {
     -webkit-transition: -webkit-transform 1.2s;
     -moz-transition: -moz-transform 1.2s;
@@ -135,7 +92,14 @@ body {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     position: relative;
+    border: none !important;
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
 }
+
+/*.card {
+    background: none repeat scroll 0 0 #FFFFFF;
+}*/
 
 /* hide back of pane during swap */
 .front, .back {
@@ -149,27 +113,19 @@ body {
 /*    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);*/
 }
 
-/*.front,
-.back {*/
-    /*    position: absolute !important; */
-/*    backface-visibility: hidden;
-    top: 0;
-    left: 0;
-    background-color: var(--aged-white) !important;
-}*/
-
 .front {
-    z-index: 3;
+    z-index: 100;
 }
 
     .front img {
         opacity: 70%;
-        margin: 10px auto;
+        margin: 10px 10px;
         height: 250px;
+        width: 90%;
     }
 
 .back {
-    z-index: 2;
+    z-index: 99;
     -webkit-transform: rotateY( 360deg );
     -moz-transform: rotateY( 360deg );
     -o-transform: rotateY( 360deg );
@@ -180,12 +136,8 @@ body {
         opacity: 85%;
         object-fit: fill !important;
         height: 100%;
-        width: 100%;
+        width: 90%;
     }
-
-.card {
-    background: none repeat scroll 0 0 #FFFFFF;
-}
 
 .color-test {
     outline: 2px solid red;

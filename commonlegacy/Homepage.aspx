@@ -18,16 +18,16 @@
                 <div class="col-md-3 col-sm-6 mb-5">
                     <div class="text-center card-container">
                         <div class="card h-100">
-                            <div class="rounded d-flex justify-content-center text-center flex-column card-bump front" style="width: 18rem;">
+                            <div class="rounded d-flex align-items-center text-center flex-column card-bump front">
                                 <!---to return cards back to working with green background, remove two-stack card setup (front at same level as back)--->
-                                <img src="https://i.ibb.co/dKT6HCG/Alchemy-sulfur-symbol.png" alt="alchemy" />
+                                <img src="https://i.ibb.co/dKT6HCG/Alchemy-sulfur-symbol.png" alt="alchemy" class="card-img-top" />
                                 <div class="card-body">
                                     <h3 class="card-title dark-brown text-center">Thorn-gatherer</h3>
                                     <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
                                 </div>
 
                             </div>
-                            <div class="card rounded d-flex justify-content-center card-bump back" style="width: 18rem;">
+                            <div class="card rounded d-flex justify-content-center card-bump back">
                                 <img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="rounded" />
                             </div>
                         </div>
@@ -37,14 +37,14 @@
                     <div class="col-md-3 col-sm-6 mb-5">
                         <div class="text-center card-container">
                             <div class="card h-100">
-                                <div class="rounded d-flex justify-content-center text-center flex-column card-bump front" style="width: 18rem;">
-                                    <img src="https://i.ibb.co/HC8JnyG/dice1.png" alt="dice" />
+                                <div class="rounded d-flex align-items-center text-center flex-column card-bump front">
+                                    <img src="https://i.ibb.co/HC8JnyG/dice1.png" alt="dice" class="card-img-top" />
                                     <div class="card-body">
                                         <h3 class="card-title dark-brown">Die-caster</h3>
                                         <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
                                     </div>
                                 </div>
-                                <div class="rounded d-flex justify-content-center card-bump back" style="width: 18rem;">
+                                <div class="rounded d-flex justify-content-center card-bump back">
                                     <div class="card-body">
                                         <img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="card-img-top rounded" />
                                     </div>
@@ -55,14 +55,14 @@
                 <div class="col-md-3 col-sm-6 mb-5">
                     <div class="text-center card-container">
                         <div class="card h-100">
-                            <div class="rounded d-flex justify-content-center text-center flex-column card-bump front" style="width: 18rem;">
-                            <img src="https://i.ibb.co/RD4f2jp/moon.png" alt="moon" />
+                            <div class="rounded d-flex align-items-center text-center flex-column card-bump front">
+                            <img src="https://i.ibb.co/RD4f2jp/moon.png" alt="moon" class="card-img-top" />
                             <div class="card-body">
                                 <h3 class="card-title dark-brown">Moon-chaser</h3>
                                 <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
                             </div>
                         </div>
-                            <div class="rounded d-flex justify-content-center card-bump back" style="width: 18rem;">
+                            <div class="rounded d-flex justify-content-center card-bump back">
                                 <img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="card-img-top rounded" />
                             </div>
                         </div>
