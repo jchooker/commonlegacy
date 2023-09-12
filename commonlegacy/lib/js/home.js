@@ -1,4 +1,4 @@
-﻿//$(function () {
+﻿$(function () {
 //    $(".flip-card").removeClass("debounce-css");
 //    $('.card-container > .card-ctr').on({ //need to pinpoint this so .back and .front are being targeted same way as yt video
 //        mouseenter() {
@@ -15,4 +15,8 @@
             //}
         //}
 //    });
-//});
+    $(".card-container").on("mouseleave", function () {
+        $(".shadow-hover::after").attr("opacity", "0")
+/*            .addClass("reverse-shadow");*/
+    })
+});

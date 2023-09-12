@@ -16,11 +16,11 @@
             </div>
             <div class="row d-flex justify-content-evenly flex-row">
                 <div class="col-md-3 col-sm-6 mb-5">
-                    <div class="text-center card-container">
+                    <div class="text-center card-container shadow-hover">
                         <div class="card h-100">
                             <div class="rounded d-flex align-items-center text-center flex-column card-bump front">
                                 <!---to return cards back to working with green background, remove two-stack card setup (front at same level as back)--->
-                                <img src="https://i.ibb.co/dKT6HCG/Alchemy-sulfur-symbol.png" alt="alchemy" class="card-img-top" />
+                                <img src="https://i.ibb.co/dKT6HCG/Alchemy-sulfur-symbol.png" alt="alchemy" class="card-img-top h-100" />
                                 <div class="card-body">
                                     <h3 class="card-title dark-brown text-center">Thorn-gatherer</h3>
                                     <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
@@ -35,7 +35,7 @@
                 </div>
                 <!--added text-justify class for paragraph alignment---->            
                     <div class="col-md-3 col-sm-6 mb-5">
-                        <div class="text-center card-container">
+                        <div class="text-center card-container shadow-hover">
                             <div class="card h-100">
                                 <div class="rounded d-flex align-items-center text-center flex-column card-bump front">
                                     <img src="https://i.ibb.co/HC8JnyG/dice1.png" alt="dice" class="card-img-top" />
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 <div class="col-md-3 col-sm-6 mb-5">
-                    <div class="text-center card-container">
+                    <div class="text-center card-container shadow-hover">
                         <div class="card h-100">
                             <div class="rounded d-flex align-items-center text-center flex-column card-bump front">
                             <img src="https://i.ibb.co/RD4f2jp/moon.png" alt="moon" class="card-img-top" />

@@ -60,6 +60,8 @@ body {
     -moz-perspective: 800px;
     perspective: 800px;
     margin-bottom: 30px;
+    /*filter: drop-shadow(0 0 1rem hsla(0, 0%, 0%, 0.2));*/
+    /*transition*/
 }
 
 .card-container, .front, .back {
@@ -83,6 +85,31 @@ body {
         -o-transform: none;
         transform: none;
     }
+
+.shadow-hover {
+    position: relative;
+}
+
+    .shadow-hover::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        box-shadow: 0 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+        /*transition: opacity 0.15s ease;*/
+    }
+
+    .shadow-hover:hover::after {
+        animation: shadow-fade 1.2s ease-in-out;
+    }
+
+.reverse-shadow {
+    animation: shadow-fade 1.2s ease-in-out;
+}
+
 
 .card {
     -webkit-transition: -webkit-transform 1.2s;
@@ -174,5 +201,20 @@ body {
         -webkit-transform: translateY(-2em) rotateY(360deg);
         -moz-transform: translateY(-2em) rotateY(360deg);
         -o-transform: translateY(-2em) rotateY(360deg);
+    }
+}
+
+@keyframes shadow-fade {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
