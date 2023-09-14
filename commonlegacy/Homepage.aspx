@@ -27,8 +27,8 @@
                                 </div>
 
                             </div>
-                            <div class="card rounded d-flex justify-content-center card-bump back">
-                                <img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="rounded" />
+                            <div class="rounded d-flex justify-content-center card-bump back">
+                                <%--<img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="rounded" />--%>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="rounded d-flex justify-content-center card-bump back">
                                     <div class="card-body">
-                                        <img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="card-img-top rounded" />
+                                        <%--<img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="card-img-top rounded" />--%>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                             <div class="rounded d-flex justify-content-center card-bump back">
-                                <img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="card-img-top rounded" />
+                                <%--<img src="https://i.ibb.co/ZMfm8y2/tarot-back.png" alt="tarot-back1" class="card-img-top rounded" />--%>
                             </div>
                         </div>
                     </div>

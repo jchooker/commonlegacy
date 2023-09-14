@@ -56,73 +56,104 @@ body {
 }
 
 .card-container {
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    perspective: 800px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
     margin-bottom: 30px;
     /*filter: drop-shadow(0 0 1rem hsla(0, 0%, 0%, 0.2));*/
     /*transition*/
-}
-
-.card-container, .front, .back {
+    /*    -webkit-transition: -webkit-transform 1.2s;
+    -moz-transition: -moz-transform 1.2s;
+    -o-transition: -o-transform 1.2s;
+    transition: transform 1.2s;*/
+    /*    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;*/
+    position: relative;
+    border: none !important;
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    perspective: 1000px;
     width: 100%;
     height: 420px;
     border-radius: 4px;
 }
 
-    .card-container:not(.manual-flip):hover .card,
+/*    .card-container:not(.manual-flip):hover .card,
     .card-container.hover.manual-flip .card {
         -webkit-transform: rotateY( 360deg );
         -moz-transform: rotateY( 360deg );
         -o-transform: rotateY( 360deg );
         transform: rotateY( 360deg );
-    }
+    }*/
 
-    .card-container.static:hover .card,
+/*    .card-container.static:hover .card,
     .card-container.static.hover .card {
         -webkit-transform: none;
         -moz-transform: none;
         -o-transform: none;
         transform: none;
-    }
+    }*/
 
-.shadow-hover {
+/*.shadow-hover {
     position: relative;
-}
+}*/
 
-    .shadow-hover::after {
+/*    .shadow-hover::after {
         content: '';
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        opacity: 1;
-        box-shadow: 0 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;*/
+/*        opacity: 1;*/
+/*        opacity: 1;*/
+/*        box-shadow: 0 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);*/
+/*        animation: shadow-fade 1.2s ease-in-out forwards;*/
         /*transition: opacity 0.15s ease;*/
-    }
+    /*}*/
 
-    .shadow-hover:hover::after {
+/*    .shadow-hover:hover::after {
         animation: shadow-fade 1.2s ease-in-out;
-    }
+    }*/
 
-.reverse-shadow {
-    animation: shadow-fade 1.2s ease-in-out;
+/*.shadow-hover.reverse-shadow::after {
+    animation: shadow-fade 1.2s ease-in-out forwards;
+    opacity: 1;
 }
 
+.shadow-hover.early-terminate::after {
+    opacity: 0;
+}*/
+
+/*****CARD BACK NOT SHOWING UP!!! ORDER OF CSS RULES DOES MATTER!!!!!!!!!!!!!!!!!!!!!!*/
 
 .card {
-    -webkit-transition: -webkit-transform 1.2s;
+/*    -webkit-transition: -webkit-transform 1.2s;
     -moz-transition: -moz-transform 1.2s;
     -o-transition: -o-transform 1.2s;
-    transition: transform 1.2s;
+    transition: transform 1.2s;*/
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    position: relative;
+    position: absolute;
     border: none !important;
     float: none; /* Added */
     margin-bottom: 10px; /* Added */
+    perspective: 1000px;
+/*    transition: transform 0.5s, box-shadow 0.5s;*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+    .card-container:hover::after .card {
+        /*        transform: translateY(-10px) rotateY(360deg);*/
+        animation: shadow-fade 1.5s ease-in;
+/*        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);*/
+    }
+
+    .card-container:hover .card {
+        animation: shift-twist 1.5s forwards;
+    }
 
 /*.card {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -136,9 +167,30 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    transform-style: preserve-3d;
     background-color: #FFF;
-/*    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);*/
+    width: 100%;
+    height: 420px;
+    border-radius: 4px;
+    transition: opacity 2s;
+    /*    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);*/
 }
+
+.card:hover::after {
+    opacity: 0; /* When hovered, hide the back face */
+}
+
+    .card:not(:hover) {
+        /*transform: translateY(0) rotateY(0deg);*/
+        transition: transform 2s, box-shadow 1s;
+/*        animation: shift-twist 1.1s ease-in;*/
+    }
+
+        .card:not(:hover)::after .front, .back {
+            opacity: 1;
+        }
 
 .front {
     z-index: 100;
@@ -153,68 +205,55 @@ body {
 
 .back {
     z-index: 99;
-    -webkit-transform: rotateY( 360deg );
+    transform: rotateY(1turn);
+    background-image: url('https://i.ibb.co/ZMfm8y2/tarot-back.png');
+    background-size: 306px 420px;
+    background-blend-mode: overlay;
+    background-color: transparent;
+    /*    -webkit-transform: rotateY( 360deg );
     -moz-transform: rotateY( 360deg );
     -o-transform: rotateY( 360deg );
-    transform: rotateY( 360deg );
+    transform: rotateY( 360deg );*/
 }
 
-    .back img {
+/*    .back img {
         opacity: 85%;
         object-fit: fill !important;
         height: 100%;
         width: 90%;
-    }
+    }*/
 
 .color-test {
     outline: 2px solid red;
 }
 
-@keyframes y-shift {
-    0% {
-        transform: translateY(0);
-    }
-    20% {
-        transform: translateY(0.5em);
-        -webkit-transform: translateY(0.5em);
-        -moz-transform: translateY(0.5em);
-        -o-transform: translateY(0.5em);
-    }
-    100% {
-        transform: translateY(-2em);
-        -webkit-transform: translateY(-2em);
-        -moz-transform: translateY(-2em);
-        -o-transform: translateY(-2em);
-    }
-}
-
-@keyframes y-rotate {
-    0% {
-        transform: translateY(-2em) rotateY(0deg);
-        -webkit-transform: translateY(-2em) rotateY(0deg);
-        -moz-transform: translateY(-2em) rotateY(0deg);
-        -o-transform: translateY(-2em) rotateY(0deg);
-    }
-
-    100% {
-        transform: translateY(-2em) rotateY(360deg);
-        -webkit-transform: translateY(-2em) rotateY(360deg);
-        -moz-transform: translateY(-2em) rotateY(360deg);
-        -o-transform: translateY(-2em) rotateY(360deg);
-    }
-}
-
 @keyframes shadow-fade {
     0% {
         opacity: 1;
+        box-shadow: 0 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
     }
     10% {
         opacity: 0;
+        box-shadow: 0 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
     }
     80% {
         opacity: 0;
+        box-shadow: 0 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
     }
     100% {
         opacity: 1;
+        box-shadow: 0 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes shift-twist {
+    0% {
+        transform: translateY(0) rotateY(0deg);
+    }
+    10% {
+        transform: translateY(-3rem) rotateY(0deg);
+    }
+    100% {
+        transform: translateY(-3rem) rotateY(360deg);
     }
 }
