@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" onerror="jsFallback1();"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous" onerror="jsFallback6();"></script>
     <link href="/lib/css/master.css" rel="stylesheet" />  
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -14,7 +15,7 @@
     <%--fonts--%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Yuji+Syuku&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway&family=Yuji+Syuku&display=swap" rel="stylesheet">
     <script>
         function jsFallback1() { //how to generalize this (inline function that can accept url string?)
             var elem = document.createElement('script1');
@@ -39,6 +40,11 @@
         function jsFallback5() {
             var elem = document.createElement('script5');
             elem.src = '/lib/bootstrap/fa/fontawesome.js';
+            document.body.appendChild(elem);
+        }
+        function jsFallback6() {
+            var elem = document.createElement('script6');
+            elem.src = '/lib/jquery/jquery-ui.1.13.2.min.js';
             document.body.appendChild(elem);
         }
         function cssFallback1() {
@@ -69,7 +75,7 @@
                 <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="Homepage.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -93,7 +99,7 @@
                             <asp:LinkButton class="nav-link" href="#" runat="server" ID="LinkButton4">View Curios <span class="sr-only">(current)</span></asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton class="nav-link" href="#" runat="server" ID="LinkButton5">Login</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" href="userlogin.aspx" runat="server" ID="LinkButton5">Log In</asp:LinkButton>
                         </li>                        
                         <li class="nav-item">
                             <asp:LinkButton class="nav-link" href="#" runat="server" ID="LinkButton6">Register</asp:LinkButton>

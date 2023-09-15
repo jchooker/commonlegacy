@@ -23,7 +23,7 @@
                                 <img src="https://i.ibb.co/dKT6HCG/Alchemy-sulfur-symbol.png" alt="alchemy" class="card-img-top" />
                                 <div class="card-body">
                                     <h3 class="card-title dark-brown text-center">Thorn-gatherer</h3>
-                                    <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
+                                    <p class="text-justify card-text dark-brown opacity-75">Eschewing the well-worn path</p>
                                 </div>
 
                             </div>
@@ -41,7 +41,7 @@
                                     <img src="https://i.ibb.co/HC8JnyG/dice1.png" alt="dice" class="card-img-top" />
                                     <div class="card-body">
                                         <h3 class="card-title dark-brown">Die-caster</h3>
-                                        <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
+                                        <p class="text-justify card-text dark-brown opacity-75">Restless, hitting a wall with repetitive, skill-based pursuits</p>
                                     </div>
                                 </div>
                                 <div class="rounded d-flex justify-content-center card-bump back">
@@ -59,7 +59,7 @@
                             <img src="https://i.ibb.co/RD4f2jp/moon.png" alt="moon" class="card-img-top" />
                             <div class="card-body">
                                 <h3 class="card-title dark-brown">Moon-chaser</h3>
-                                <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
+                                <p class="text-justify card-text dark-brown opacity-75">You can't stay inside for yet another night</p>
                             </div>
                         </div>
                             <div class="rounded d-flex justify-content-center card-bump back">
