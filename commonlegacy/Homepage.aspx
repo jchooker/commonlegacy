@@ -20,7 +20,7 @@
                         <div class="card h-100">
                             <div class="rounded d-flex align-items-center text-center flex-column card-bump front">
                                 <!---to return cards back to working with green background, remove two-stack card setup (front at same level as back)--->
-                                <img src="https://i.ibb.co/dKT6HCG/Alchemy-sulfur-symbol.png" alt="alchemy" class="card-img-top h-100" />
+                                <img src="https://i.ibb.co/dKT6HCG/Alchemy-sulfur-symbol.png" alt="alchemy" class="card-img-top" />
                                 <div class="card-body">
                                     <h3 class="card-title dark-brown text-center">Thorn-gatherer</h3>
                                     <p class="text-justify card-text dark-brown opacity-75">Pick your collection of symbols</p>
