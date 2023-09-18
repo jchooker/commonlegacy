@@ -66,15 +66,38 @@
   <ItemGroup>
     <Content Include="adminlogin.aspx" />
     <Content Include="lib\css\master.css" />
+    <Content Include="lib\css\musecraft.css" />
     <Content Include="lib\css\userlogin.css" />
+    <Content Include="lib\css\userprofile.css" />
+    <Content Include="lib\css\userregistration.css" />
     <Content Include="lib\js\home.js" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="lib\js\userprofile.js" />
+    <Content Include="lib\js\userregistration.js" />
     <Content Include="musecraft.aspx" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="tiles\asmodeus.html" />
+    <Content Include="tiles\astaroth.html" />
+    <Content Include="tiles\baphomet.html" />
+    <Content Include="tiles\css\asmodeus.css" />
+    <Content Include="tiles\css\astaroth.css" />
+    <Content Include="tiles\css\baphomet.css" />
+    <Content Include="tiles\css\haagenti.css" />
+    <Content Include="tiles\css\marchosias.css" />
+    <Content Include="tiles\css\sabnock.css" />
+    <Content Include="tiles\css\samigina.css" />
+    <Content Include="tiles\css\serp.css" />
+    <Content Include="tiles\haagenti.html" />
+    <Content Include="tiles\marchosias.html" />
+    <Content Include="tiles\sabnock.html" />
+    <Content Include="tiles\samigina.html" />
+    <Content Include="tiles\serp.html" />
     <Content Include="userlogin.aspx" />
+    <Content Include="userprofile.aspx" />
+    <Content Include="userregistration.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
   </ItemGroup>
@@ -114,6 +137,20 @@
     </Compile>
     <Compile Include="userlogin.aspx.designer.cs">
       <DependentUpon>userlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userprofile.aspx.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userprofile.aspx.designer.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userregistration.aspx.cs">
+      <DependentUpon>userregistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userregistration.aspx.designer.cs">
+      <DependentUpon>userregistration.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
