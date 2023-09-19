@@ -42,10 +42,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,7 +102,9 @@
     <Content Include="lib\css\userprofile.css" />
     <Content Include="lib\css\userregistration.css" />
     <Content Include="lib\js\home.js" />
+    <Content Include="HandlerCSS.ashx" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="lib\js\musecraft.js" />
     <Content Include="lib\js\userprofile.js" />
     <Content Include="lib\js\userregistration.js" />
     <Content Include="musecraft.aspx" />
@@ -82,16 +115,24 @@
     <Content Include="tiles\asmodeus.html" />
     <Content Include="tiles\astaroth.html" />
     <Content Include="tiles\baphomet.html" />
+    <Content Include="tiles\beleth.html" />
+    <Content Include="tiles\crocell.html" />
     <Content Include="tiles\css\asmodeus.css" />
     <Content Include="tiles\css\astaroth.css" />
     <Content Include="tiles\css\baphomet.css" />
+    <Content Include="tiles\css\beleth.css" />
+    <Content Include="tiles\css\crocell.css" />
     <Content Include="tiles\css\haagenti.css" />
     <Content Include="tiles\css\marchosias.css" />
+    <Content Include="tiles\css\paimon.css" />
+    <Content Include="tiles\css\ronove.css" />
     <Content Include="tiles\css\sabnock.css" />
     <Content Include="tiles\css\samigina.css" />
     <Content Include="tiles\css\serp.css" />
     <Content Include="tiles\haagenti.html" />
     <Content Include="tiles\marchosias.html" />
+    <Content Include="tiles\paimon.html" />
+    <Content Include="tiles\ronove.html" />
     <Content Include="tiles\sabnock.html" />
     <Content Include="tiles\samigina.html" />
     <Content Include="tiles\serp.html" />
@@ -108,6 +149,9 @@
     </Compile>
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerCSS.ashx.cs">
+      <DependentUpon>HandlerCSS.ashx</DependentUpon>
     </Compile>
     <Compile Include="musecraft.aspx.cs">
       <DependentUpon>musecraft.aspx</DependentUpon>

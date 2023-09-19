@@ -121,3 +121,4 @@ C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\obj\Debu
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\obj\Debug\commonlegacy.csproj.CopyComplete
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\obj\Debug\commonlegacy.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\obj\Debug\commonlegacy.pdb
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Web.Cors.dll
