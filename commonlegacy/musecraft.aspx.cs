@@ -27,8 +27,8 @@ namespace commonlegacy
                         string divId = "draggon" + (i + 1);
 
                         //find corresponding div by ID
-                        //HtmlGenericControl targetDiv = (HtmlGenericControl)FindControl(divId);
-                        HtmlGenericControl targetDiv = (HtmlGenericControl)this.FindControl(divId);
+                        HtmlGenericControl targetDiv = (HtmlGenericControl)FindControl(divId);
+                        //HtmlGenericControl targetDiv = (HtmlGenericControl)this.FindControl(divId);
 
                         if (targetDiv != null)
                         {

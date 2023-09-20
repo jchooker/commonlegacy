@@ -1,9 +1,9 @@
 ﻿$(document).ready(function () {
-    //$.getJSON("./json/tiles.json", function (data) {
-    //    var fileNames = [];
-    //    $.each(data, function (key, val) {
-    //        fileNames.push(val);
-    //    });
+    $.getJSON("./json/tiles.json", function (data) {
+        var fileNames = [];
+        $.each(data, function (key, val) {
+            fileNames.push(val);
+        });
 
         for (var i = 0; i < fileNames.length; i++) {
             var containerId = "draggon" + (i + 1);
@@ -23,7 +23,7 @@
             $('#' + containerId).draggable();
         }
     });
-//});
+});
 
 //function loadHtmlContent(containerId, fileName) {
 //    var filePath = "./tiles/" + fileName + ".html";

@@ -16,12 +16,13 @@ namespace commonlegacy
         //need to decide how much to let this do and how much to let code-behind do!
         public void ProcessRequest(HttpContext context)
         {
-            context.Response.ContentType = "text/plain";
+            //System.Diagnostics.Debug.WriteLine("debug started");
+            context.Response.ContentType = "text/html";
 
             string jsonFilePath = context.Server.MapPath("./json/tiles.json");
             string[] fileNames = ReadFileNamesFromJson(jsonFilePath);
 
-            StringBuilder contentBuilder = new StringBuilder();;
+            StringBuilder contentBuilder = new StringBuilder();
 
             for (int i = 0; i < fileNames.Length; i++)
             {
@@ -35,11 +36,12 @@ namespace commonlegacy
 
                 //string cssFilePath = pathPrefix2 + "css/" + $"{fileName}.css";
                 string cssFilePath = "";
-                if (HttpContext.Current != null)
-                {
-                    var request = HttpContext.Current.Request;
-                    cssFilePath += request.Url.GetLeftPart(UriPartial.Authority) + pathPrefix2 + "css/" + $"{fileName}.css";
-                }
+                //if (HttpContext.Current != null)
+                //{
+                //    var request = HttpContext.Current.Request;
+                //    cssFilePath += request.Url.GetLeftPart(UriPartial.Authority) + pathPrefix2 + "css/" + $"{fileName}.css";
+                //}
+                cssFilePath += pathPrefix2 + "css/" + $"{fileName}.css";
                 string htmlFilePath = pathPrefix1 + $"{fileName}.html";
 
                 string cssContent = ReadFileContent(cssFilePath);
@@ -47,7 +49,7 @@ namespace commonlegacy
 
                 //contentBuilder.AppendLine($"{cssContent}\n{htmlContent}");
                 //contentBuilder.AppendLine($"<head>@Styles.Render(\"{cssFilePath}\")</head>\n{htmlContent}"); //<--reuse??
-                contentBuilder.AppendLine($"<link rel=\"stylesheet\" type=\"text/css\" href=\"/tiles/css/{cssFilePath}\" />");
+                contentBuilder.AppendLine($"<link rel=\"stylesheet\" type=\"text/css\" href=\"{cssFilePath}\" />");
                 contentBuilder.AppendLine(htmlContent);
 
 
