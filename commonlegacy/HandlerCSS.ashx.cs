@@ -16,7 +16,7 @@ namespace commonlegacy
         //need to decide how much to let this do and how much to let code-behind do!
         public void ProcessRequest(HttpContext context)
         {
-            context.Response.ContentType = "text/html";
+            context.Response.ContentType = "text/plain";
 
             string jsonFilePath = context.Server.MapPath("./json/tiles.json");
             string[] fileNames = ReadFileNamesFromJson(jsonFilePath);
@@ -30,15 +30,25 @@ namespace commonlegacy
 
                 //string divId = $"draggon{i + 1}";
 
-                string pathPrefix = "./tiles/";
+                string pathPrefix1 = "./tiles/";
+                string pathPrefix2 = "/tiles/";
 
-                string cssFilePath = pathPrefix + "css/" + $"{fileName}.css";
-                string htmlFilePath = pathPrefix + $"{fileName}.html";
+                //string cssFilePath = pathPrefix2 + "css/" + $"{fileName}.css";
+                string cssFilePath = "";
+                if (HttpContext.Current != null)
+                {
+                    var request = HttpContext.Current.Request;
+                    cssFilePath += request.Url.GetLeftPart(UriPartial.Authority) + pathPrefix2 + "css/" + $"{fileName}.css";
+                }
+                string htmlFilePath = pathPrefix1 + $"{fileName}.html";
 
                 string cssContent = ReadFileContent(cssFilePath);
                 string htmlContent = ReadFileContent(htmlFilePath);
 
-                contentBuilder.AppendLine($"{cssContent}\n{htmlContent}");
+                //contentBuilder.AppendLine($"{cssContent}\n{htmlContent}");
+                //contentBuilder.AppendLine($"<head>@Styles.Render(\"{cssFilePath}\")</head>\n{htmlContent}"); //<--reuse??
+                contentBuilder.AppendLine($"<link rel=\"stylesheet\" type=\"text/css\" href=\"/tiles/css/{cssFilePath}\" />");
+                contentBuilder.AppendLine(htmlContent);
 
 
                 //htmlContent.AppendLine($"<link rel=\"stylesheet\" type=\"text/css\" href=\"./tiles/css/{cssFilePath}\" />");
