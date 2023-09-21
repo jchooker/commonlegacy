@@ -15,11 +15,6 @@
     --inter: 'Inter', sans-serif;
 }
 
-iframe {
-    scroll-behavior: unset;
-    overflow: unset;
-}
-
 .draggon {
     position: relative;
     overflow: hidden;

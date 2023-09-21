@@ -13,7 +13,7 @@
     <RootNamespace>commonlegacy</RootNamespace>
     <AssemblyName>commonlegacy</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44334</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
@@ -110,6 +110,7 @@
   <ItemGroup>
     <Content Include="adminlogin.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="index.html" />
     <Content Include="lib\css\master.css" />
     <Content Include="lib\css\musecraft.css" />
     <Content Include="lib\css\userlogin.css" />
@@ -244,7 +245,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53955</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44334/</IISUrl>
+          <IISUrl>http://localhost/commonlegacy</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44334/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

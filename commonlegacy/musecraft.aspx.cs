@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -16,33 +18,63 @@ namespace commonlegacy
         {
             if (!IsPostBack)
             {
-                string combinedContent = GetHtmlContentFromHandler();
+                //string combinedContent = GetHtmlContentFromHandler(); v1
+                string handlerUrl = ResolveUrl("https://localhost:44334/HandlercSS.ashx");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(handlerUrl);
 
-                if (!string.IsNullOrEmpty(combinedContent))
+                request.Method = "GET";
+
+                try
                 {
-                    string[] contentGroups = combinedContent.Split(new[] { "<!--DELIMITER HERE-->" }, StringSplitOptions.RemoveEmptyEntries);
-
-                    for (int i = 0; i < contentGroups.Length; i++)
+                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                     {
-                        string divId = "draggon" + (i + 1);
-
-                        //find corresponding div by ID
-                        HtmlGenericControl targetDiv = (HtmlGenericControl)FindControl(divId);
-                        //HtmlGenericControl targetDiv = (HtmlGenericControl)this.FindControl(divId);
-
-                        if (targetDiv != null)
+                        if (response.StatusCode == HttpStatusCode.OK)
                         {
-                            // Assign the content to the InnerHtml of the div
-                            targetDiv.InnerHtml = contentGroups[i];
+                            string combinedContent = HttpContext.Current.Session["CSSandHTML"] as string;
+
+                            if (!string.IsNullOrEmpty(combinedContent))
+                            {
+                                string[] contentGroups = combinedContent.Split(new[] { "<!--DELIMITER HERE-->" }, StringSplitOptions.RemoveEmptyEntries);
+
+                                for (int i = 0; i < contentGroups.Length; i++)
+                                {
+                                    string divId = "draggon" + (i + 1);
+
+                                    //find corresponding div by ID
+                                    HtmlGenericControl targetDiv = (HtmlGenericControl)FindControl(divId);
+                                    //HtmlGenericControl targetDiv = (HtmlGenericControl)this.FindControl(divId);
+
+                                    if (targetDiv != null)
+                                    {
+                                        // Assign the content to the InnerHtml of the div
+                                        targetDiv.InnerHtml = contentGroups[i];
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("no such HTML elements to send data to");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("No content in Session");
+                            }
                         }
                     }
+                } catch (Exception)
+                {
+                    Response.StatusCode = 500; // Internal Server Error
+                    Response.StatusDescription = "An error occurred while processing your request.";
+                    Response.End();
                 }
+
             }
         }
 
         private string GetHtmlContentFromHandler()
         {
-            return Session["CSSandHTML"] as string;
+            string cssAndHtml = HttpContext.Current.Session["CSSandHTML"] as string;
+            return cssAndHtml;
 
             //return combinedContent;
         }

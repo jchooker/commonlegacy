@@ -26,8 +26,7 @@ namespace commonlegacy
             // Check if the request is for a CSS file.
             string filePath = Request.FilePath;
             string fileExtension = VirtualPathUtility.GetExtension(filePath);
-            Console.WriteLine(filePath);
-            if (fileExtension.Equals(".css") && Regex.IsMatch(filePath, @"/\/tiles\/css\/[a-zA-Z]+\.css"))
+            if (fileExtension.Equals(".css") && Regex.IsMatch(filePath, @"/tiles/css/[a-zA-Z]+\.css"))
             {
                 // Add the CORS headers to the response.
                 Response.AddHeader("Access-Control-Allow-Origin", "*");

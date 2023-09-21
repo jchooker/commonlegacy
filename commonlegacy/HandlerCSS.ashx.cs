@@ -16,13 +16,26 @@ namespace commonlegacy
         //need to decide how much to let this do and how much to let code-behind do!
         public void ProcessRequest(HttpContext context)
         {
+            StringBuilder contentBuilder = new StringBuilder();
+
+            if (HttpContext.Current.Session == null || HttpContext.Current.Session.IsNewSession)
+            {
+                //HttpContext.Current.Session.Session_Start();
+                // Start a new session if it's not already initialized
+                HttpContext.Current.Session.RemoveAll(); // Optional: Clear any existing session data
+                HttpContext.Current.Session.Add("CSSandHTML", contentBuilder.ToString());
+            }
+            else
+            {
+                // Session is already initialized, update the data
+                HttpContext.Current.Session["CSSandHTML"] = contentBuilder.ToString();
+            }
             //System.Diagnostics.Debug.WriteLine("debug started");
             context.Response.ContentType = "text/html";
 
             string jsonFilePath = context.Server.MapPath("./json/tiles.json");
             string[] fileNames = ReadFileNamesFromJson(jsonFilePath);
 
-            StringBuilder contentBuilder = new StringBuilder();
 
             for (int i = 0; i < fileNames.Length; i++)
             {
@@ -44,7 +57,7 @@ namespace commonlegacy
                 cssFilePath += pathPrefix2 + "css/" + $"{fileName}.css";
                 string htmlFilePath = pathPrefix1 + $"{fileName}.html";
 
-                string cssContent = ReadFileContent(cssFilePath);
+                //string cssContent = ReadFileContent(cssFilePath);
                 string htmlContent = ReadFileContent(htmlFilePath);
 
                 //contentBuilder.AppendLine($"{cssContent}\n{htmlContent}");
