@@ -1,82 +1,90 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Net;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace commonlegacy
 {
-    //solution of this vs ashx handler is to get the html content to add from handler, 
-    //and let these code-behind methods distribute them 
     public partial class Musecraft : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //string combinedContent = GetHtmlContentFromHandler(); v1
-                string handlerUrl = ResolveUrl("https://localhost:44334/HandlercSS.ashx");
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(handlerUrl);
+                List<string> fileNames = ReadJsonData();
 
-                request.Method = "GET";
-
-                try
+                for (int i = 0; i < fileNames.Count; i++)
                 {
-                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                    string cssFileName = $"{fileNames[i]}.css";
+                    string htmlFileName = $"{fileNames[i]}.html";
+
+                    string cssContent = $"<!DOCTYPE html>\n<html>\n<head>\n<style>" + GetEmbeddedResource($"commonlegacy.{cssFileName}") + "\n</style>\n";
+                    string htmlContent = GetEmbeddedResource($"commonlegacy.{htmlFileName}") + "\n</body>\n</html>";
+
+                    ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentPlaceHolder1");
+
+                    if (contentPlaceHolder != null )
                     {
-                        if (response.StatusCode == HttpStatusCode.OK)
+                        Literal thisDiv = (Literal)contentPlaceHolder.FindControl($"Draggon{i}");
+
+                        if (thisDiv != null )
                         {
-                            string combinedContent = HttpContext.Current.Session["CSSandHTML"] as string;
-
-                            if (!string.IsNullOrEmpty(combinedContent))
-                            {
-                                string[] contentGroups = combinedContent.Split(new[] { "<!--DELIMITER HERE-->" }, StringSplitOptions.RemoveEmptyEntries);
-
-                                for (int i = 0; i < contentGroups.Length; i++)
-                                {
-                                    string divId = "draggon" + (i + 1);
-
-                                    //find corresponding div by ID
-                                    HtmlGenericControl targetDiv = (HtmlGenericControl)FindControl(divId);
-                                    //HtmlGenericControl targetDiv = (HtmlGenericControl)this.FindControl(divId);
-
-                                    if (targetDiv != null)
-                                    {
-                                        // Assign the content to the InnerHtml of the div
-                                        targetDiv.InnerHtml = contentGroups[i];
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("no such HTML elements to send data to");
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("No content in Session");
-                            }
+                            thisDiv.Text += cssContent;
+                            thisDiv.Text += htmlContent;
                         }
                     }
-                } catch (Exception)
-                {
-                    Response.StatusCode = 500; // Internal Server Error
-                    Response.StatusDescription = "An error occurred while processing your request.";
-                    Response.End();
-                }
+
+                };
 
             }
         }
-
-        private string GetHtmlContentFromHandler()
+        private List<string> ReadJsonData()
         {
-            string cssAndHtml = HttpContext.Current.Session["CSSandHTML"] as string;
-            return cssAndHtml;
+            string jsonFilePath = System.Web.HttpContext.Current.Server.MapPath("./json/tiles.json");
+            try
+            {
+                string jsonData = File.ReadAllText(jsonFilePath);
+                List<string> jsonArr = JsonConvert.DeserializeObject<List<string>>(jsonData);
 
-            //return combinedContent;
+                foreach (string item in jsonArr)
+                {
+                    Console.WriteLine(item);
+                }
+
+                return jsonArr;
+
+            }
+            catch (JsonException ex)
+            {
+                Console.WriteLine("Error parsing JSON: " + ex.Message);
+                //    List<string> errArr = new List<string>
+                //{
+                //    "0"
+                //};
+                    return new List<string> { "0" };
+            }
+        }
+
+        private string GetEmbeddedResource(string resourceName)
+        {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+            {
+                if (stream != null)
+                {
+                    using (var reader = new StreamReader(stream))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+            }
+            return string.Empty;
         }
     }
+
 }

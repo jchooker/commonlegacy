@@ -13,7 +13,7 @@
     <RootNamespace>commonlegacy</RootNamespace>
     <AssemblyName>commonlegacy</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44334</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
@@ -109,7 +109,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminlogin.aspx" />
+    <EmbeddedResource Include="asmodeus.css" />
+    <EmbeddedResource Include="asmodeus.html" />
+    <EmbeddedResource Include="astaroth.css" />
+    <EmbeddedResource Include="astaroth.html" />
+    <EmbeddedResource Include="baphomet.css" />
+    <EmbeddedResource Include="baphomet.html" />
+    <EmbeddedResource Include="beleth.css" />
+    <EmbeddedResource Include="beleth.html" />
+    <EmbeddedResource Include="crocell.css" />
+    <EmbeddedResource Include="crocell.html" />
     <Content Include="Global.asax" />
+    <EmbeddedResource Include="haagenti.css" />
+    <EmbeddedResource Include="haagenti.html" />
     <Content Include="index.html" />
     <Content Include="lib\css\master.css" />
     <Content Include="lib\css\musecraft.css" />
@@ -122,11 +134,23 @@
     <Content Include="lib\js\musecraft.js" />
     <Content Include="lib\js\userprofile.js" />
     <Content Include="lib\js\userregistration.js" />
+    <EmbeddedResource Include="marchosias.css" />
+    <EmbeddedResource Include="marchosias.html" />
     <Content Include="Musecraft.aspx" />
+    <EmbeddedResource Include="paimon.css" />
+    <EmbeddedResource Include="paimon.html" />
+    <EmbeddedResource Include="ronove.css" />
+    <EmbeddedResource Include="ronove.html" />
+    <EmbeddedResource Include="sabnock.css" />
+    <EmbeddedResource Include="sabnock.html" />
+    <EmbeddedResource Include="samigina.css" />
+    <EmbeddedResource Include="samigina.html" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <EmbeddedResource Include="serp.css" />
+    <EmbeddedResource Include="serp.html" />
     <Content Include="tiles\asmodeus.html" />
     <Content Include="tiles\astaroth.html" />
     <Content Include="tiles\baphomet.html" />
@@ -245,9 +269,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53955</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/commonlegacy</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>https://localhost:44334/</IISAppRootUrl>
+          <IISUrl>http://localhost:44334/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
