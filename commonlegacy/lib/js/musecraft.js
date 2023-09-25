@@ -1,30 +1,13 @@
 ﻿$(function () {
-    let fileNames = [];
-    $.getJSON("./json/tiles.json", function (data) {
-        console.log("next layer js running");
-        $.each(data, function (key, val) {
-            fileNames.push(val);
-        });
-        for (var i = 0; i < fileNames.length; i++) {
-            var containerId = "Draggon" + (i + 1);
-            //var cssFileName = "~/tiles/css/" + fileNames[i] + ".css";
-            //console.log(cssFileName);
-            //var htmlFileName = "~/tiles/" + fileNames[i] + ".html";
-            //console.log(htmlFileName);
-            //loadContentIntoDiv(containerId, htmlFileName, cssFileName);
-
-            $('#' + containerId).draggable();
-        }
-    });
     const styleElems = document.querySelectorAll('.card-body .col style');
-    $.each(styleElems, function (key, val) {
-        console.log(val);
-    });
 
     styleElems.forEach((styleSection, index) => {
         let cssText = styleSection.textContent || styleSection.innerText || styleSection.innerHTML;
 
         cssText = renameCSSClasses(cssText, `-${index + 1}`);
+        cssText = renameTridivCss(cssText, `-${index + 1}`); //not replacing '#tridiv' with '#tridiv-N' like it should yet
+
+        /*cssText = cssTxt1 + cssTxt2*/;
 
         styleSection.textContent = cssText;
     });
@@ -38,7 +21,11 @@
             renameHTMLClasses(elems[i], `-${index + 1}`);
         }
     });
+
+    addDragability();
 });
+
+//***POST 09/23/2023 11AM -- NEED TO UNDO CHANGES SO CERTAIN JS ELEMENTS ARE STILL IN $.GETSJON ASYNC AREA?*/
 
 function loadContentIntoDiv(divId, htmlFile, cssFile) {
     $.ajax({
@@ -82,6 +69,14 @@ function renameTridiv(element, suffix) {
         const updatedID = currentID + suffix;
         element.setAttribute('id', updatedID);
     }
+}
+
+function renameTridivCss(tridivtxt, suffix) {
+    return tridivtxt.replace("#tridiv", (match) => match + suffix);
+}
+
+function addDragability() {
+    $('div[id*="tridiv"] .col').draggable();
 }
 
 //function loadHtmlContent(containerId, fileName) {
