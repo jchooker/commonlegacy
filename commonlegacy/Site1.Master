@@ -12,6 +12,7 @@
     </asp:ContentPlaceHolder>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" onerror="cssFallback1();">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" onerror="cssFallback2();" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css" onerror="cssFallback2();" />
     <%--fonts--%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +48,11 @@
             elem.src = '/lib/jquery/jquery-ui.1.13.2.min.js';
             document.body.appendChild(elem);
         }
+        function jsFallback7() {
+            var elem = document.createElement('script7');
+            elem.src = '/lib/datatables/js/jquery.dataTables.select.js';
+            document.body.appendChild(elem);
+        }
         function cssFallback1() {
             var elem = document.createElement('link1');
             elem.rel = 'stylesheet';
@@ -57,6 +63,11 @@
             var elem = document.createElement('link2');
             elem.rel = 'stylesheet';
             elem.href = '/lib/datatables/css/jquery.dataTables.css';
+            document.head.appendChild(elem);
+        }function cssFallback3() {
+            var elem = document.createElement('link3');
+            elem.rel = 'stylesheet';
+            elem.href = '/lib/datatables/css/jquery.dataTables.select.css';
             document.head.appendChild(elem);
         }
     </script>
@@ -121,6 +132,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous" onerror="jsFallback2();"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous" onerror="jsFallback3();"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js" onerror="jsFallback4();"></script>
+    <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js" onerror="jsFallback7();"></script>
     <script src="https://use.fontawesome.com/a00a76f2e2.js" onerror="jsFallback5();"></script>
 </body>
 </html>
