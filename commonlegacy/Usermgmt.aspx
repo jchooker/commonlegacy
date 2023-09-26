@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Usermgmt.aspx.cs" Inherits="commonlegacy.Usermgmt" %>
+<%@ Register TagPrefix="uc" TagName="UsersDataTableControl" 
+    Src="UsersDataTable.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/lib/css/usermgmt.css" />
     <script src="./lib/js/usermgmt.js" language="javascript" type="text/javascript"></script>
@@ -79,7 +81,7 @@
             <div class="col-md-7">
                 <div class="card mt-3">
                     <div class="card-body">
-                        <table id="all-users" class="display table table-striped table-bordered" style="width:100%"></table>
+                        <uc:UsersDataTable ID="UserDataTableControl1" runat="server" />
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
 function setUpTable() {
     var dt = $('#all-users').DataTable({
         ajax: {
-            url: './json/users.json',
+            url: '/api/users',
             type: 'GET',
             datatype: 'json',
             dataSrc: ""
