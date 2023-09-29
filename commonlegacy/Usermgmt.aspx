@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Usermgmt.aspx.cs" Inherits="commonlegacy.Usermgmt" %>
-<%@ Register TagPrefix="uc" TagName="UsersDataTableControl" 
-    Src="UsersDataTable.ascx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeFile="Usermgmt.aspx.cs" Inherits="commonlegacy.Usermgmt" %>
+<%@ Register TagPrefix="uc" TagName="UsersDataTable" src="~/UsersDataTable.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/lib/css/usermgmt.css" />
-    <script src="./lib/js/usermgmt.js" language="javascript" type="text/javascript"></script>
+    <%--<script src="./lib/js/usermgmt.js" language="javascript" type="text/javascript"></script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
@@ -81,7 +80,7 @@
             <div class="col-md-7">
                 <div class="card mt-3">
                     <div class="card-body">
-                        <uc:UsersDataTable ID="UserDataTableControl1" runat="server" />
+                        <uc:UsersDataTable id="UserDataTableControl1" runat="server" namespace="commonlegacy"/>
                     </div>
                 </div>
             </div>

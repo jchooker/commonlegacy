@@ -188,7 +188,11 @@ C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Enti
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\EntityFramework.SqlServer.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Microsoft.Data.Sqlite.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Newtonsoft.Json.dll
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\SQLitePCLRaw.batteries_v2.dll
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\SQLitePCLRaw.core.dll
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\SQLitePCLRaw.provider.dynamic_cdecl.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Buffers.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Data.SQLite.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Data.SQLite.EF6.dll
@@ -205,10 +209,12 @@ C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Syst
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Web.Http.Cors.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Web.Http.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Web.Http.WebHost.dll
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Z.EntityFramework.Extensions.dll
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\EntityFramework.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\EntityFramework.SqlServer.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Microsoft.Data.Sqlite.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Newtonsoft.Json.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Buffers.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Data.SQLite.xml
@@ -223,6 +229,7 @@ C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Syst
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Web.Http.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Web.Http.Cors.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\System.Web.Http.WebHost.xml
+C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\bin\Z.EntityFramework.Extensions.xml
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\obj\Debug\commonlegacy.csproj.AssemblyReference.cache
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\obj\Debug\commonlegacy.csproj.CoreCompileInputs.cache
 C:\Users\jchooker\source\repos\commonlegacy-2\commonlegacy\commonlegacy\obj\Debug\commonlegacy.csproj.CopyComplete

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" TagPrefix="uc" Namespace="commonlegacy" Assembly="commonlegacy" CodeBehind="UsersDataTable.ascx.cs" Inherits="commonlegacy.UsersDataTable" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="~/UsersDataTable.ascx.cs" Inherits="commonlegacy.UsersDataTable" Description="Where DataTable will dwell" %>
 
         <%--//do i need to scrap this one for being linked to the master page??--%>
 <table id="all-users" class="display table table-striped table-bordered" style="width:100%"></table>
@@ -13,18 +13,18 @@
     function setUpTable() {
         var dt = $('#all-users').DataTable({
             ajax: {
-                url: '/api/users',
+                url: '/UsersDataTable.asmx/GetUsers',
                 type: 'GET',
                 datatype: 'json',
                 dataSrc: ""
             },
             columns: [
-                { data: 'last_name', title: 'Last Name' },
-                { data: 'first_name', title: 'First Name' },
-                { data: 'email', title: 'Email' },
-                { data: 'gender', title: 'Gender' },
-                { data: 'age', title: 'Age' },
-                { data: 'country', title: 'Country' },
+                { data: 'LastName', title: 'Last Name' },
+                { data: 'FirstName', title: 'First Name' },
+                { data: 'Email', title: 'Email' },
+                { data: 'Gender', title: 'Gender' },
+                { data: 'Age', title: 'Age' },
+                { data: 'Country', title: 'Country' },
             ],
             select: 'single'
         });
@@ -33,12 +33,12 @@
     function getRowData() {
         var table = $('#all-users').DataTable();
         $('#all-users tbody').on('click', 'tr', function () {
-            $('#first-name-mod').val(table.row(this).data()['first_name']);
-            $('#last-name-mod').val(table.row(this).data()['last_name']);
-            $('#email-mod').val(table.row(this).data()['email']);
-            $('#gender-mod').val(table.row(this).data()['gender']);
-            $('#age-mod').val((table.row(this).data()['age']).toString());
-            $('#country-mod').val(table.row(this).data()['country']);
+            $('#first-name-mod').val(table.row(this).data()['FirstName']);
+            $('#last-name-mod').val(table.row(this).data()['LastName']);
+            $('#email-mod').val(table.row(this).data()['Email']);
+            $('#gender-mod').val(table.row(this).data()['Gender']);
+            $('#age-mod').val((table.row(this).data()['Age']).toString());
+            $('#country-mod').val(table.row(this).data()['Country']);
         })
     }
 
