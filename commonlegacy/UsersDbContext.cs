@@ -5,15 +5,30 @@ using System.Web;
 using System.Data.Entity;
 using commonlegacy.entities;
 using System.Data.SQLite;
+using System.Runtime.Remoting.Contexts;
+using System.Data.Entity.Migrations;
+using System.Data.SQLite.EF6.Migrations;
 
 namespace commonlegacy
 {
-    public class UsersDbContext : DbContext
+    class UsersDbContext : DbContext
+    //public class UsersDbContext : DbContext
     {
-        public UsersDbContext() : base("name=con") 
+        static UsersDbContext()         
+            //public UsersDbContext() : base("name=con") 
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<UsersDbContext, ContextMigrationConfiguration>(true));
         }
 
         public DbSet<User> Users { get; set; }
+    }
+    internal sealed class ContextMigrationConfiguration : DbMigrationsConfiguration<UsersDbContext>
+    {
+        public ContextMigrationConfiguration()
+        {
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
+            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
+        }
     }
 }
