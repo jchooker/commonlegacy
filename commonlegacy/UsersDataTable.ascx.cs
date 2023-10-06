@@ -9,11 +9,11 @@ using System.Data.SQLite;
 
 namespace commonlegacy
 {
-    public partial class UsersDataTable : SQLiteConnection
+    public partial class UsersDataTable
     {
         private const string DB_NAME = "users_db.db";
         private SQLiteConnection _connection;
-        public UsersDataTable() : base()
+        public UsersDataTable()
         {
             using (var factory = new SQLiteFactory())
             {
